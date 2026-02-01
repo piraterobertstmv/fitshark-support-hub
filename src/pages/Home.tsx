@@ -7,11 +7,25 @@ import {
   Activity, 
   TrendingUp, 
   Shield, 
-  Smartphone,
   Sparkles,
   Search,
   Heart
 } from "lucide-react";
+
+// App Screenshots
+import screenshotHome from "@/assets/screenshots/screenshot-home.png";
+import screenshotExercises from "@/assets/screenshots/screenshot-exercises.png";
+import screenshotCardio from "@/assets/screenshots/screenshot-cardio.png";
+import screenshotInsights from "@/assets/screenshots/screenshot-insights.png";
+import screenshotProfile from "@/assets/screenshots/screenshot-profile.png";
+
+const screenshots = [
+  { src: screenshotHome, alt: "FitShark Home Screen with workout stats" },
+  { src: screenshotExercises, alt: "Exercise library with search and filters" },
+  { src: screenshotCardio, alt: "Cardio logging with duration and heart rate" },
+  { src: screenshotInsights, alt: "Insights screen with streaks and progress" },
+  { src: screenshotProfile, alt: "Profile with Pro coming soon and settings" },
+];
 
 const features = [
   {
@@ -107,7 +121,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Screenshots Placeholder Section */}
+      {/* Screenshots Section */}
       <section className="py-20 md:py-28 bg-card/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-14">
@@ -119,23 +133,25 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Screenshot placeholders - will be replaced with actual screenshots */}
-          <div className="flex justify-center gap-4 overflow-x-auto pb-4 scrollbar-hide">
-            {[1, 2, 3, 4, 5].map((i) => (
+          {/* Screenshots Gallery */}
+          <div className="flex justify-center gap-4 md:gap-6 overflow-x-auto pb-6 px-4 -mx-4 md:mx-0 scrollbar-hide snap-x snap-mandatory">
+            {screenshots.map((screenshot, index) => (
               <div
-                key={i}
-                className="flex-shrink-0 w-48 md:w-56 aspect-[9/19] glass-card-elevated rounded-3xl flex items-center justify-center"
+                key={index}
+                className="flex-shrink-0 w-44 md:w-52 lg:w-60 snap-center animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="text-center p-4">
-                  <Smartphone size={32} className="text-muted-foreground mx-auto mb-2" />
-                  <p className="text-xs text-muted-foreground">Screenshot {i}</p>
+                <div className="glass-card-elevated rounded-3xl p-2 hover-lift">
+                  <img 
+                    src={screenshot.src} 
+                    alt={screenshot.alt}
+                    className="w-full h-auto rounded-2xl"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            Upload your app screenshots to replace these placeholders
-          </p>
         </div>
       </section>
 
