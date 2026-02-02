@@ -40,7 +40,6 @@ export function SEO({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="google-site-verification" content="b00rmJ7XFjUxJcLP9svgTvi_zuFidgDIsTQAia4vu6M" />
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="#FF6B35" />
