@@ -13,7 +13,7 @@ export function SEO({
   path = "/",
   keywords = "FitShark, workout tracker, cardio tracker, fitness app, iOS fitness, exercise library, local storage fitness"
 }: SEOProps) {
-  const siteUrl = "https://www.fitshark.com";
+  const siteUrl = "https://www.fithsark.com";
   const fullUrl = `${siteUrl}${path}`;
 
   const structuredData = {
