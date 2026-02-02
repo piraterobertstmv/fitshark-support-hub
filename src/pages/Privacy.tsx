@@ -6,9 +6,10 @@ export default function Privacy() {
   return (
     <Layout>
       <SEO 
-        title="Privacy Policy – FitShark"
-        description="Learn how FitShark protects your privacy. Your workout data stays on your device and is never sold."
+        title="Privacy Policy – FitShark iOS App"
+        description="Learn how FitShark protects your privacy. Your workout and cardio data stays on your device and is never sold or shared."
         path="/privacy"
+        keywords="fitshark privacy, privacy policy, data protection, fitness app privacy, local storage, no data sharing"
       />
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">

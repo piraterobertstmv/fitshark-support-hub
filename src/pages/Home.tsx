@@ -9,7 +9,10 @@ import {
   Shield, 
   Sparkles,
   Search,
-  Heart
+  Heart,
+  Lock,
+  Zap,
+  Target
 } from "lucide-react";
 
 // App Screenshots
@@ -50,6 +53,24 @@ const features = [
   },
 ];
 
+const benefits = [
+  {
+    icon: Lock,
+    title: "Your Data, Your Device",
+    description: "Everything stays on your iPhone. No cloud sync, no data sharing, complete privacy.",
+  },
+  {
+    icon: Zap,
+    title: "Lightning Fast",
+    description: "Instant access to your workout history and exercise library without waiting.",
+  },
+  {
+    icon: Target,
+    title: "Stay Consistent",
+    description: "Weekly streaks and progress insights keep you motivated to train regularly.",
+  },
+];
+
 export default function Home() {
   return (
     <Layout>
@@ -63,22 +84,26 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 md:px-6 py-20 md:py-32 relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in leading-tight">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 text-sm font-medium">
+              <Zap size={16} />
+              Fitness Tracking, Simplified
+            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
               Train consistently.{" "}
               <span className="text-gradient-orange">Track it simply.</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-in animation-delay-100 max-w-2xl mx-auto">
-              FitShark is a lightweight workout + cardio tracker with a free exercise library. 
-              Your data stays on your device.
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              FitShark is a lightweight iOS workout and cardio tracker with a free exercise library. 
+              Your data stays on your device—no accounts, no ads, just fitness tracking.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in animation-delay-200">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/support">Get Support</Link>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
                 <Link to="/privacy">
-                  <Shield size={20} />
+                  <Lock size={20} />
                   Privacy & Data
                 </Link>
               </Button>
@@ -87,15 +112,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Key Benefits Section */}
       <section className="py-20 md:py-28">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Why choose FitShark?
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Built for fitness enthusiasts who value privacy and simplicity
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {benefits.map((benefit, index) => (
+              <div
+                key={benefit.title}
+                className="glass-card p-8 hover-lift animate-fade-in relative group"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="w-12 h-12 rounded-xl gradient-orange flex items-center justify-center mb-4 shadow-glow-orange">
+                    <benefit.icon size={24} className="text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 md:py-28 bg-card/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               What you can do
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              Simple tools to keep your fitness on track
+              Everything you need to track workouts and cardio in one place
             </p>
           </div>
 
@@ -122,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* Screenshots Section */}
-      <section className="py-20 md:py-28 bg-card/30">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -156,30 +218,34 @@ export default function Home() {
       </section>
 
       {/* Privacy Highlight */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-card/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto">
-            <div className="glass-card-elevated p-8 md:p-10 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-success/20 flex items-center justify-center mx-auto mb-6">
-                <Shield size={32} className="text-success" />
+            <div className="glass-card-elevated p-8 md:p-10 text-center relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-success/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative">
+                <div className="w-16 h-16 rounded-2xl bg-success/20 flex items-center justify-center mx-auto mb-6">
+                  <Shield size={32} className="text-success" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  Your data stays on your phone
+                </h2>
+                <p className="text-muted-foreground text-lg mb-6">
+                  FitShark stores all workout and cardio logs locally on your device. 
+                  Your data is never uploaded, sold, or shared with anyone. 
+                  You have complete control and privacy.
+                </p>
+                <Button variant="outline" asChild>
+                  <Link to="/privacy">Read Privacy Policy</Link>
+                </Button>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Your data stays on your phone
-              </h2>
-              <p className="text-muted-foreground text-lg mb-6">
-                FitShark stores workout and cardio logs locally on your device. 
-                Your data is not sold or shared with anyone.
-              </p>
-              <Button variant="outline" asChild>
-                <Link to="/privacy">Read Privacy Policy</Link>
-              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Pro Teaser */}
-      <section className="py-20 md:py-28 bg-card/30">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent mb-6">
@@ -190,8 +256,9 @@ export default function Home() {
               Pro features on the way
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Advanced analytics and more are coming in a future update. 
-              Stay tuned for exciting new features.
+              Advanced analytics, custom reports, and more are coming in a future update. 
+              Stay tuned for exciting new features built on the solid foundation 
+              of privacy and simplicity you trust.
             </p>
             <div className="flex items-center justify-center gap-3 text-muted-foreground">
               <Heart size={18} className="text-primary" />

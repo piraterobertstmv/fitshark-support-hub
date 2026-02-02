@@ -6,9 +6,10 @@ export default function Terms() {
   return (
     <Layout>
       <SEO 
-        title="Terms of Use – FitShark"
-        description="Terms of Use for FitShark iOS fitness app. Read about license, user responsibilities, and limitations."
+        title="Terms of Use – FitShark Fitness App"
+        description="Terms of Use for FitShark iOS fitness tracker. Read about license, user responsibilities, limitations, and fitness disclaimers."
         path="/terms"
+        keywords="fitshark terms, terms of use, fitness app terms, software license, user agreement"
       />
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">

@@ -97,9 +97,10 @@ export default function Support() {
   return (
     <Layout>
       <SEO 
-        title="Support & FAQ – FitShark"
-        description="Get help with FitShark. Find answers to common questions about workouts, cardio logging, data storage, and troubleshooting."
+        title="Support & FAQ – FitShark Fitness Tracker Help"
+        description="Get help with FitShark. Find answers to FAQs about workout logging, cardio tracking, data storage, troubleshooting, and privacy."
         path="/support"
+        keywords="fitshark support, fitshark faq, workout tracker help, fitness app support, cardio logging, workout logging"
       />
       {/* Hero */}
       <section className="py-20 md:py-28">
