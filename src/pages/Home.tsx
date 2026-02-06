@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/Layout";
@@ -128,19 +129,44 @@ export default function Home() {
               Log workouts, track cardio, monitor progress—all with complete privacy.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Button variant="hero" size="xl" asChild className="group">
-                <Link to="/support" className="flex items-center gap-2">
-                  Get Started
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
+            <div className="flex flex-col sm:flex-row items-start gap-4 flex-wrap">
+              <a
+                href="https://apps.apple.com/ie/app/fitshark/id6758582816"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg transition-opacity hover:opacity-90"
+                aria-label="Download FitShark on the App Store"
+                tabIndex={0}
+              >
+                <img
+                  src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us"
+                  alt="Download on the App Store"
+                  className="h-12 md:h-14 w-auto"
+                  width={160}
+                  height={54}
+                />
+              </a>
               <Button variant="outline" size="xl" asChild>
                 <Link to="/privacy">
                   <Lock size={20} />
                   Learn About Privacy
                 </Link>
               </Button>
+              <a
+                href="https://www.producthunt.com/products/fitshark?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-fitshark"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded transition-opacity hover:opacity-90"
+                aria-label="FitShark on Product Hunt - Minimal workout and cardio tracker with local-only logs"
+                tabIndex={0}
+              >
+                <img
+                  alt="FitShark - Minimal workout & cardio tracker with local-only logs | Product Hunt"
+                  width={250}
+                  height={54}
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1075140&theme=light&t=1770393567703"
+                />
+              </a>
             </div>
 
             {/* Stats */}
@@ -403,5 +429,3 @@ export default function Home() {
     </Layout>
   );
 }
-
-import React from 'react';
